@@ -49,7 +49,7 @@ for i in range(len(applicants_prefer_list)):
             universities_matched[applicants_prefer_list[i][j]-1] = i+1
             break
         else:
-            print "applicant #", i+1, "likes university #", applicants_prefer_list[i][j]
+            print "Applicant #", i+1, "likes university #", applicants_prefer_list[i][j]
             print "But university #", applicants_prefer_list[i][j], " is already matched."
             applications_counter[i] += 1
             university = applicants_prefer_list[i][j]
@@ -59,14 +59,14 @@ for i in range(len(applicants_prefer_list)):
             temp=universities_prefer_list[applicants_prefer_list[i][j]-1]
             temp2=temp[:]
             inverse = inverted_universities_prefer_list[applicants_prefer_list[i][j]-1]
-            print "university #", applicants_prefer_list[i][j], " has to choose between applicant #", i+1, " and applicant #", matching
+            print "University #", applicants_prefer_list[i][j], " has to choose between applicant #", i+1, " and applicant #", matching
             print "Here is the list of university #", applicants_prefer_list[i][j], "\'s preferences"
             print universities_prefer_list[applicants_prefer_list[i][j]-1]
             print "And here is the inverse list corresponding to it"
             print inverse
             print "i = ", i, "-", "inverse[i] is : ", inverse[i], "matching = ", matching, " - and inverse[matching] is : ", inverse[matching]
             if inverse[i] < inverse[matching-1]:
-                print "university #", applicants_prefer_list[i][j], "prefers to be with applicant #", i+1
+                print "University #", applicants_prefer_list[i][j], "prefers to be with applicant #", i+1
                 accepted = 1
             if accepted == 1:
                 applicants_matched[matching-1] = 0
@@ -74,16 +74,17 @@ for i in range(len(applicants_prefer_list)):
                 applicants_matched[new_applicant-1] = university
                 break
             else:
-                print "university #", applicants_prefer_list[i][j], "prefers to be with applicant #", matching
+                print "University #", applicants_prefer_list[i][j], "prefers to be with applicant #", matching
                 print "So, The application was rejected!"
                 continue
 
 ########################################
+print "\n"
 print "First iteration was finished... The results : "
 print "applicants matched: ", applicants_matched
 print "universities matched: ", universities_matched
-print "Number of applications: ", applications_counter
-
+print "Number of applications each: ", applications_counter
+print "\n"
 ########################################
 def some_applicant_is_alone_but_hasnt_applied_to_all_universities():
     result = []
@@ -106,8 +107,10 @@ while True in condition:
     i = the_applicant
     print "It turns out applicant #", i+1, "is alone and hasn\'t applied to all universities."
     for j in range(the_first_university_he_hasnt_applied_yet, len(the_applicants_prefer_list)):
-        print "applicant #", i+1, "likes university #", applicants_prefer_list[i][j]
+        print "\n"
+        print "Applicant #", i+1, "likes university #", applicants_prefer_list[i][j]
         print "But university #", applicants_prefer_list[i][j], " is already matched."
+        print "\n"
         applications_counter[i] += 1
         university = applicants_prefer_list[i][j]
         matching = universities_matched[applicants_prefer_list[i][j]-1]
@@ -116,14 +119,20 @@ while True in condition:
         temp = universities_prefer_list[applicants_prefer_list[i][j]-1]
         temp2 = temp[:]
         inverse = inverted_universities_prefer_list[applicants_prefer_list[i][j]-1]
-        print "university #", applicants_prefer_list[i][j], " has to choose between applicant #", i+1, " and applicant #", matching
+        print "University #", applicants_prefer_list[i][j], " has to choose between applicant #", i+1, " and applicant #", matching
+        print "\n"
         print "Here is the list of university #", applicants_prefer_list[i][j], "\'s preferences"
+        print ""
         print universities_prefer_list[applicants_prefer_list[i][j]-1]
+        print "\n"
         print "And here is the inverse list corresponding to it"
+        print ""
         print inverse
+        print "\n"
         print "i = ", i, "-", "inverse[i] is : ", inverse[i], "matching = ", matching, " - and inverse[matching] is : ", inverse[matching-1]
         if inverse[i] < inverse[matching-1]:
-            print "university #", applicants_prefer_list[i][j], "prefers to be with applicant #", i+1
+            print "\n"
+            print "University #", applicants_prefer_list[i][j], "prefers to be with applicant #", i+1
             accepted = 1
         if accepted == 1:
             applicants_matched[matching-1] = 0
@@ -131,13 +140,15 @@ while True in condition:
             applicants_matched[new_applicant-1] = university
             break
         else:
-            print "university #", applicants_prefer_list[i][j], "prefers to be with applicant #", matching
+            print "\n"
+            print "University #", applicants_prefer_list[i][j], "prefers to be with applicant #", matching
             print "So, The application was rejected!"
+            print "\n\n"
             continue
     condition = some_applicant_is_alone_but_hasnt_applied_to_all_universities()
 
 ########################################
-
+print "\n"
 print "The final result: "
 print "applicants matched: ", applicants_matched
 print "universities matched: ", universities_matched
