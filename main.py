@@ -35,7 +35,7 @@ def inverse_arr(arr):
 inverted_universities_prefer_list = [[[] for j in range(len(applicants_prefer_list))] for i in range(len(universities_prefer_list))]
 for j in range(len(universities_prefer_list)):
     inverted_universities_prefer_list[j] = inverse_arr(universities_prefer_list[j])
-print inverted_universities_prefer_list
+print "Inverted University Preference List to Student wise: ",inverted_universities_prefer_list
 
 for i in range(len(applicants_prefer_list)):
     print "Trying to find a good partner for applicant #", i+1
@@ -58,8 +58,7 @@ for i in range(len(applicants_prefer_list)):
             accepted = 0
             temp=universities_prefer_list[applicants_prefer_list[i][j]-1]
             temp2=temp[:]
-            inverse = inverse_arr(temp2)
-            print "INVERSE!!!  ", inverse
+            inverse = inverted_universities_prefer_list[applicants_prefer_list[i][j]-1]
             print "university #", applicants_prefer_list[i][j], " has to choose between applicant #", i+1, " and applicant #", matching
             print "Here is the list of university #", applicants_prefer_list[i][j], "\'s preferences"
             print universities_prefer_list[applicants_prefer_list[i][j]-1]
@@ -116,8 +115,7 @@ while True in condition:
         accepted = 0
         temp = universities_prefer_list[applicants_prefer_list[i][j]-1]
         temp2 = temp[:]
-        inverse = inverse_arr(temp2)
-        print "INVERSE!!!  ", inverse
+        inverse = inverted_universities_prefer_list[applicants_prefer_list[i][j]-1]
         print "university #", applicants_prefer_list[i][j], " has to choose between applicant #", i+1, " and applicant #", matching
         print "Here is the list of university #", applicants_prefer_list[i][j], "\'s preferences"
         print universities_prefer_list[applicants_prefer_list[i][j]-1]
