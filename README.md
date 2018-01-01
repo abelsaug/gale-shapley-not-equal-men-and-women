@@ -1,2 +1,2 @@
-# gale-shapley-not-equal-men-and-women
-An extended version of Gale-Shapley (Hapiness) Algorithm for the case that the number of men is not equal to the number of women
+# gale-shapley-student-university-matching
+An extended version of Gale-Shapley Algorithm for matching students to university slots
